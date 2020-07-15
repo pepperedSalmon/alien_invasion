@@ -26,6 +26,9 @@
     </Compile>
     <Compile Include="alien_invasion.py" />
     <Compile Include="bullet.py" />
+    <Compile Include="button.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="game_stats.py">
       <SubType>Code</SubType>
     </Compile>
