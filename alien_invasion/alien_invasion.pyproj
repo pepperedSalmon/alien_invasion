@@ -32,6 +32,9 @@
     <Compile Include="game_stats.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="scoreboard.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="settings.py" />
     <Compile Include="ship.py" />
   </ItemGroup>
