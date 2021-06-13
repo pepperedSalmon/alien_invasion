@@ -108,13 +108,13 @@ class AlienInvasion:
         elif event.key==pygame.K_LEFT:
             #Move The ship to the left
             self.ship.moving_left=False
+
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group"""
         if len(self.bullets)<self.settings.bullets_allowed:
             new_bullet=Bullet(self)
             self.bullets.add(new_bullet)
 
-    
     def _update_bullets(self):
         """update position of bullets and get rid of old bullets."""
         # update bullet positions.
@@ -156,6 +156,7 @@ class AlienInvasion:
             self._ship_hit()
         # check for aliens  hitting the bottom of the screen.
         self._check_aliens_bottom()
+
     def _ship_hit(self):
         """ Response to ship being hit by an alien. """
         if self.stats.ships_left>0:   
@@ -185,7 +186,6 @@ class AlienInvasion:
                 self._ship_hit()
                 break
 
-
     def _create_fleet(self):
         """Create the fleet of aliens."""
         # Create an alien and find the number of aliens in a row.
@@ -204,6 +204,7 @@ class AlienInvasion:
             for alien_number in range(number_aliens_x):
                 #create an alien and place it in the row
                 self._create_alien(alien_number,row_number)
+
     def _create_alien(self, alien_number,row_number):
         """Create an alien and place it in the row"""
         alien=Alien(self)
@@ -212,12 +213,14 @@ class AlienInvasion:
         alien.rect.x=alien.x
         alien.rect.y=alien.rect.height+2*alien.rect.height*row_number
         self.aliens.add(alien)
+
     def _check_fleet_edges(self):
         """ Respond appropriately if any aliens have reached an edge."""
         for alien in self.aliens.sprites():
             if alien.check_edges():
                 self._change_fleet_direction()
                 break
+
     def _change_fleet_direction(self):
         """Drop the entire fleet and change the fleet's direction."""
         for alien in self.aliens.sprites():
